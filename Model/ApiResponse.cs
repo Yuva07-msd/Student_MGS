@@ -5,6 +5,6 @@
         public bool status { get; set; }
         public bool Status { get; internal set; }
         public string message { get; set; } = string.Empty;
-        public string Messages { get; internal set; }
+        public string Message { get; internal set; }
     }
 }
