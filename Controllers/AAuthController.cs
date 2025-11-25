@@ -28,7 +28,7 @@ namespace StudentMs.Controllers
             }
            
             var loginresult = await _authRepository.LoginStudentAsync(request.StudentMail, request.Password);
-            if (loginresult == null)
+            if (loginresult == null || loginresult.User == null)
             {
                 return Unauthorized("Invalid credentials.");
             }

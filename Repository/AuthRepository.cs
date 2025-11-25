@@ -36,7 +36,7 @@ namespace StudentMs.Repository
             _dbConnection = new MySqlConnector.MySqlConnection(connectionString);
         }
 
-        public async Task<LoginResult?> LoginStudentAsync(string studentMail, string password)
+        public async Task<LoginResult> LoginStudentAsync(string studentMail, string password)
         {
             var userid = await GetUserId(studentMail);
             if (userid == 0)
@@ -252,7 +252,7 @@ namespace StudentMs.Repository
             var parameters = new DynamicParameters();
             parameters.Add("p_StudentMail", studentMail, DbType.String);
             var pwd = await con.QueryFirstOrDefaultAsync<string>(sp, parameters, commandType: CommandType.StoredProcedure);
-            return pwd;
+            return pwd ?? string.Empty;
         }
 
         private async Task<int> GetUserId(string studentMail)
@@ -264,6 +264,64 @@ namespace StudentMs.Repository
             var userId = await con.QueryFirstOrDefaultAsync<int>(sp, parameters, commandType: CommandType.StoredProcedure);
             return userId;
         }
+        public LoginResponse GenerateJwtToken(User user)
+        {
 
+            if (user == null)
+                throw new ArgumentNullException(nameof(user), "User object cannot be null when generating JWT token.");
+
+            var jwtSettings = _configuration.GetSection("Jwt");
+            var keyString = jwtSettings["Key"];
+            var issuer = jwtSettings["Issuer"];
+            var audience = jwtSettings["Audience"];
+            var expiresInMinutesStr = jwtSettings["ExpiresInMinutes"];
+            if (string.IsNullOrWhiteSpace(keyString) || string.IsNullOrWhiteSpace(issuer) || string.IsNullOrWhiteSpace(audience) || string.IsNullOrWhiteSpace(expiresInMinutesStr))
+            {
+                throw new InvalidOperationException("Missing required JWT configuration (Key, Issuer, Audience, or ExpiresInMinutes).");
+            }
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(keyString));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            int expiresInMinutes = int.TryParse(expiresInMinutesStr, out int minutes) ? minutes : 60;
+
+            // Fix CS1061: Use correct property names from User class
+            // If User class does not have these properties, you must add them to the User class.
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, user.StudentMail ?? ""), // Ensure User has StudentMail property
+                new Claim("StudentName", user.StudentName ?? ""),
+                new Claim("UserId", user.StudentId.ToString()),
+                new Claim("Role", "Student"),
+                new Claim("Department", user.Department ?? ""),
+                new Claim("CollegeName", user.CollegeName ?? ""),
+                new Claim("Degree", user.Degree ?? ""),
+                new Claim("Year", user.Year.ToString()),
+                new Claim("StudentRollNo", user.StudentRollNo ?? ""),
+                new Claim("StudentPhoneNo", user.StudentPhoneNo.ToString()),
+                new Claim(JwtRegisteredClaimNames.Iat,
+                    DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(),
+                    ClaimValueTypes.Integer64)
+            };
+
+            var token = new JwtSecurityToken(
+                issuer: issuer,
+                audience: audience,
+                claims: claims,
+                expires: DateTime.UtcNow.AddMinutes(expiresInMinutes),
+                signingCredentials: creds);
+
+
+            return new LoginResponse
+            {
+                CollegeName = user.CollegeName ?? "",
+                Department = user.Department ?? "",
+                Degree = user.Degree ?? "",
+                Password = user.Password ?? "",
+                StudentMail = user.StudentMail ?? "",
+                StudentName = user.StudentName ?? "",
+                StudentPhoneNo = user.StudentPhoneNo,
+                StudentRollNo = user.StudentRollNo ?? "",
+                Year = user.Year,
+            };
+        }
     }
 }
