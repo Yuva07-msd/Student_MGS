@@ -1,0 +1,464 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\studentms.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:studentms.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\StudentMs.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StudentMs.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\repository\\studentrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:repository\\studentrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\repository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:repository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\StudentMs.csproj.nuget.g.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\StudentMs.csproj.nuget.g.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\StudentMs.csproj.nuget.g.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\StudentMs.csproj.nuget.g.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\StudentMs.csproj.nuget.dgspec.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\StudentMs.csproj.nuget.dgspec.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\project.nuget.cache||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\project.nuget.cache||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\project.assets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\project.assets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\model\\studentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:model\\studentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\model\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:model\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\model\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:model\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\model\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:model\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\helper\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:helper\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\helper\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:helper\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\controllers\\aregcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:controllers\\aregcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\controllers\\aauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:controllers\\aauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\repository\\irepository\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:repository\\irepository\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|c:\\users\\yuvaprasath.b\\source\\repos\\studentms\\repository\\irepository\\iregisterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52248290-0D7B-4392-AD72-ACC2B170F137}|StudentMs.csproj|solutionrelative:repository\\irepository\\iregisterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T04:39:03.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentMs.http",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\StudentMs.http",
+              "RelativeDocumentMoniker": "StudentMs.http",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\StudentMs.http",
+              "RelativeToolTip": "StudentMs.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-11-25T04:39:03.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentMs.csproj.user",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\StudentMs.csproj.user",
+              "RelativeDocumentMoniker": "StudentMs.csproj.user",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\StudentMs.csproj.user",
+              "RelativeToolTip": "StudentMs.csproj.user",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2025-11-25T04:39:02.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-25T04:39:02.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-25T04:39:02.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StudentMs.csproj.nuget.g.targets",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\StudentMs.csproj.nuget.g.targets",
+              "RelativeDocumentMoniker": "obj\\StudentMs.csproj.nuget.g.targets",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\StudentMs.csproj.nuget.g.targets",
+              "RelativeToolTip": "obj\\StudentMs.csproj.nuget.g.targets",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-11-25T04:39:02.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StudentMs.csproj.nuget.g.props",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\StudentMs.csproj.nuget.g.props",
+              "RelativeDocumentMoniker": "obj\\StudentMs.csproj.nuget.g.props",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\StudentMs.csproj.nuget.g.props",
+              "RelativeToolTip": "obj\\StudentMs.csproj.nuget.g.props",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-11-25T04:39:02.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthRepository.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Repository\\AuthRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\AuthRepository.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Repository\\AuthRepository.cs",
+              "RelativeToolTip": "Repository\\AuthRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T05:45:30.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StudentRepository .cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Repository\\StudentRepository .cs",
+              "RelativeDocumentMoniker": "Repository\\StudentRepository .cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Repository\\StudentRepository .cs",
+              "RelativeToolTip": "Repository\\StudentRepository .cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvxYAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T04:56:54.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-24T09:31:33.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T05:20:47.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "StudentMs.csproj.nuget.dgspec.json",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\StudentMs.csproj.nuget.dgspec.json",
+              "RelativeDocumentMoniker": "obj\\StudentMs.csproj.nuget.dgspec.json",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\StudentMs.csproj.nuget.dgspec.json",
+              "RelativeToolTip": "obj\\StudentMs.csproj.nuget.dgspec.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-25T04:39:02.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "project.nuget.cache",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\project.nuget.cache",
+              "RelativeDocumentMoniker": "obj\\project.nuget.cache",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\project.nuget.cache",
+              "RelativeToolTip": "obj\\project.nuget.cache",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002368|",
+              "WhenOpened": "2025-11-25T04:39:02.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "project.assets.json",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\project.assets.json",
+              "RelativeDocumentMoniker": "obj\\project.assets.json",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\obj\\project.assets.json",
+              "RelativeToolTip": "obj\\project.assets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-25T04:39:01.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Model\\User.cs",
+              "RelativeDocumentMoniker": "Model\\User.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Model\\User.cs",
+              "RelativeToolTip": "Model\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T04:39:01.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "JWTHelper.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Helper\\JWTHelper.cs",
+              "RelativeDocumentMoniker": "Helper\\JWTHelper.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Helper\\JWTHelper.cs",
+              "RelativeToolTip": "Helper\\JWTHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T04:39:00.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T04:39:00.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AAuthController.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Controllers\\AAuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AAuthController.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Controllers\\AAuthController.cs",
+              "RelativeToolTip": "Controllers\\AAuthController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAmwCgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T11:26:11.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Model\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "Model\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Model\\LoginRequest.cs",
+              "RelativeToolTip": "Model\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T05:18:41.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "StudentRequest.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Model\\StudentRequest.cs",
+              "RelativeDocumentMoniker": "Model\\StudentRequest.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Model\\StudentRequest.cs",
+              "RelativeToolTip": "Model\\StudentRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T04:54:36.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "PasswordHelper.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Helper\\PasswordHelper.cs",
+              "RelativeDocumentMoniker": "Helper\\PasswordHelper.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Helper\\PasswordHelper.cs",
+              "RelativeToolTip": "Helper\\PasswordHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T07:11:00.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Model\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "Model\\ApiResponse.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Model\\ApiResponse.cs",
+              "RelativeToolTip": "Model\\ApiResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T04:59:02.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Model\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "Model\\LoginResponse.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Model\\LoginResponse.cs",
+              "RelativeToolTip": "Model\\LoginResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T12:59:35.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IRegisterRepository.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Repository\\IRepository\\IRegisterRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\IRepository\\IRegisterRepository.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Repository\\IRepository\\IRegisterRepository.cs",
+              "RelativeToolTip": "Repository\\IRepository\\IRegisterRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T05:42:42.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IAuthRepository.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Repository\\IRepository\\IAuthRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\IRepository\\IAuthRepository.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Repository\\IRepository\\IAuthRepository.cs",
+              "RelativeToolTip": "Repository\\IRepository\\IAuthRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T05:44:56.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ARegController.cs",
+              "DocumentMoniker": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Controllers\\ARegController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ARegController.cs",
+              "ToolTip": "C:\\Users\\yuvaprasath.b\\source\\repos\\StudentMs\\Controllers\\ARegController.cs",
+              "RelativeToolTip": "Controllers\\ARegController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T05:10:03.34Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

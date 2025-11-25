@@ -1,0 +1,15 @@
+﻿namespace StudentMs.Model
+{
+    public class StudentRequest
+    {
+        public string? StudentName { get; set; }
+        public string? StudentMail { get; set; }
+        public long StudentPhoneNo { get; set; }
+        public string? Password { get; set; }
+        public string? CollegeName { get; set; }
+        public string? StudentRollNo { get; set; }
+        public string? Department { get; set; }
+        public int Year { get; set; }
+        public string? Degree { get; set; }
+    }
+}
