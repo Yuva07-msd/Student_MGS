@@ -61,15 +61,13 @@ namespace StudentMs.Repository
                     Messages = new List<string> { "Invalid email or password" }
                 };
             }
-
-            const string sql = @"EXEC AuthenticateUsers @emailid, @Password";
+            var user = new User
+            {
+                StudentId = userid,
+                StudentMail = studentMail,
+                StudentPhoneNo = studentmobile != null ? long.Parse(studentmobile) : 0
+            };
             var userIP = GetClientIpAddress();
-
-            // Stored procedure returns 1 if email exists
-            var user = await _dbConnection.QueryFirstOrDefaultAsync<User>(
-                sql,
-                new { studentMail, storedHash }
-            );
             var loginResult = new LoginResult();
             bool isKnowIp = await IsIpValid(userid, userIP);
             if (isKnowIp)
@@ -88,10 +86,13 @@ namespace StudentMs.Repository
             }
         }
 
+
+
         private async Task<string> GenerateAndSendOTP(int userId, string studentMobile)
         {
+            var UserName = await GetUserName(userId);
             if (string.IsNullOrWhiteSpace(studentMobile))
-                throw new ArgumentNullException(nameof(studentMobile), $"Mobile number for userId {userId} is required.");
+                throw new ArgumentNullException(nameof(studentMobile), $"Mobile number is required to send OTP for {UserName}.");
 
             // Use a private method to manage OTP storage internally
             string otp = SaveOTP(userId);
@@ -105,7 +106,15 @@ namespace StudentMs.Repository
                 throw new InvalidOperationException("Fast2SMS API key is missing.");
 
             // Compose message
-            var message = $"UserId {userId}, your OTP is {otp}. It is valid for 3 minutes. Do not share it with anyone.";
+            var message = $@"
+<div style='font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9;'>
+    <h2 style='color:#333;'>🔒 Your OTP Code</h2>
+    <p>👋 Dear <strong>{UserName}</strong>,</p>
+    <p>🔢 Your OTP is:</p>
+    <p style='font-size: 20px; font-weight: bold; color: #fff; background-color: #007bff; padding: 10px 15px; display: inline-block; border-radius: 5px;'>{otp}</p>
+    <p>⏰ It is valid for 24 hours. Do not share it with anyone. ❗</p>
+    <p style='font-size: 12px; color: #999;'>📩 This is an automated message. Please do not reply.</p>
+</div>";
 
             // Send SMS
             using var request = new HttpRequestMessage(HttpMethod.Post, "https://www.fast2sms.com/dev/bulkV2")
@@ -140,6 +149,21 @@ namespace StudentMs.Repository
             return otp;
         }
 
+        public async Task<string?> GetUserName(int userId)
+        {
+            var connection = new MySqlConnector.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            var storedProcedure = "GetStudentNameById";
+            var parameters = new DynamicParameters();
+            parameters.Add("p_StudentId", userId, DbType.Int32);
+            connection.Open();
+            var result = await connection.QueryFirstOrDefaultAsync<string>(
+                storedProcedure,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            );
+            return result;
+        }
+
         private string SaveOTP(int userId)
         {
             if (userId <= 0)
@@ -154,12 +178,12 @@ namespace StudentMs.Repository
             var parameters = new DynamicParameters();
             parameters.Add("p_UserId", userId, DbType.Int32);
             parameters.Add("p_OTP", otp, DbType.String);
-            parameters.Add("p_ExpiryTime", DateTime.UtcNow.AddMinutes(3), DbType.DateTime);
+            parameters.Add("p_ExpiryTime", DateTime.UtcNow.AddHours(24), DbType.DateTime);
             var result = con.Execute(sp, parameters, commandType: CommandType.StoredProcedure);
             return otp;
         }
 
-        private async Task<string?> GetMobileNo(string studentMail)
+        public async Task<string?> GetMobileNo(string studentMail)
         {
             var connection = new MySqlConnector.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             var storedProcedure = "GetStudentMobileByEmail";
@@ -193,7 +217,7 @@ namespace StudentMs.Repository
 
 
 
-        private async Task<int> SaveLoginLog(int userid, object userIP, string status)
+        public async Task<int> SaveLoginLog(int userid, object userIP, string status)
         {
             var connectionString = _configuration.GetConnectionString("DefaultConnection");
             using var con = new MySqlConnector.MySqlConnection(connectionString);
@@ -245,7 +269,7 @@ namespace StudentMs.Repository
             return localIP;
         }
 
-        private async Task<string> GetPwd(string studentMail)
+        public async Task<string> GetPwd(string studentMail)
         {
             using var con = new MySqlConnector.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             var sp = "GetStudentPwdByEmail";
@@ -255,7 +279,7 @@ namespace StudentMs.Repository
             return pwd ?? string.Empty;
         }
 
-        private async Task<int> GetUserId(string studentMail)
+        public async Task<int> GetUserId(string studentMail)
         {
             using var con = new MySqlConnector.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             var sp = "GetStudentIdByEmail";
@@ -323,5 +347,35 @@ namespace StudentMs.Repository
                 Year = user.Year,
             };
         }
+        public async Task<int> CheckOTP(int StudentId, int otp)
+        {
+            var connection = new MySqlConnector.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            var storedProcedure = "CheckUserOTP";
+            var parameters = new DynamicParameters();
+            parameters.Add("p_StudentId", StudentId, DbType.Int32);
+            parameters.Add("p_OTP", otp, DbType.Int32);
+            connection.Open();
+            var result = await connection.QueryFirstOrDefaultAsync<int>(
+                storedProcedure,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            );
+            return result;
+        }
+        public async Task<int> ChangePWD(int studentId, string OldPwd, string newPwd)
+        {
+            var connectionString = _configuration.GetConnectionString("DefaultConnection");
+            using var con = new MySqlConnector.MySqlConnection(connectionString);
+            var sp = "ChangeStudentPassword";
+            var parameters = new DynamicParameters();
+            var hashedNewPassword = BCrypt.Net.BCrypt.HashPassword(newPwd);
+            var hashedOldPassword = BCrypt.Net.BCrypt.HashPassword(OldPwd);
+            parameters.Add("p_StudentId", studentId, DbType.Int32);
+            parameters.Add("p_OldPwd", hashedOldPassword, DbType.String);
+            parameters.Add("p_NewPwd", hashedNewPassword, DbType.String);
+            var result = await con.ExecuteAsync(sp, parameters, commandType: CommandType.StoredProcedure);
+            return result;
+        }
+
     }
 }

@@ -10,4 +10,16 @@
         public User? User { get; set; }
         public List<string> Messages { get; set; } = new List<string>();
     }
+    public class CheckOTP
+    {
+        public int StudentId { get; set; }
+        public int OTP { get; set; }
+    }
+    public class ChangePasswordRequest
+    {
+        public int StudentId { get; set; }
+        public string OldPwd { get; set; } = string.Empty;
+        public string NewPwd { get; set; } = string.Empty;
+
+    }
 }

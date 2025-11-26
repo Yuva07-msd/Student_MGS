@@ -11,7 +11,5 @@
             public string Department { get; set; } = string.Empty;
             public long StudentPhoneNo { get; set; }
             public string Degree { get; set; } = string.Empty;
-
-
     }
 }
