@@ -378,7 +378,7 @@ namespace StudentMs.Repository
         }
         public async Task<string> ForgotPWD(string studentMail)
         {
-           var userid = await GetUserId(studentMail);
+            var userid = await GetUserId(studentMail);
             if (userid == 0)
             {
                 throw new InvalidOperationException("Invalid email address provided.");
@@ -396,7 +396,7 @@ namespace StudentMs.Repository
             {
                 var msg = $"Hello Student,\n\nYour temporary password is: {tempPWD}\n\nPlease login and change it.";
 
-         
+
                 await SendEmailAsync(studentMail, "Your Temporary Password", msg);
 
                 return "Temporary password sent to your email.";
