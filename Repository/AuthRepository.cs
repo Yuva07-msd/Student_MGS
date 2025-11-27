@@ -68,7 +68,6 @@ namespace StudentMs.Repository
                 StudentPhoneNo = studentmobile != null ? long.Parse(studentmobile) : 0
             };
             var userIP = GetClientIpAddress();
-            //await LoginLog(userid,userIP);
             var loginResult = new LoginResult();
             bool isKnowIp = await IsIpValid(userid, userIP);
             if (isKnowIp)
@@ -87,16 +86,7 @@ namespace StudentMs.Repository
             }
         }
 
-        private async Task<int> LoginLog(int userid, object userIP)
-        {
-            using var con = new MySqlConnector.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
-            var sp = "LoginLog";
-            var parameters = new DynamicParameters();
-            parameters.Add("p_UserId", userid, DbType.Int32);
-            parameters.Add("p_IPAddress", userIP.ToString(), DbType.String);
-            var result = await con.ExecuteAsync(sp, parameters, commandType: CommandType.StoredProcedure);
-            return result;
-        }
+
 
         private async Task<string> GenerateAndSendOTP(int userId, string studentMobile)
         {
@@ -210,38 +200,19 @@ namespace StudentMs.Repository
 
         private async Task<bool> IsIpValid(int userid, object userIP)
         {
+
             var connection = new MySqlConnector.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             var storedProcedure = "IsIpKnown";
             var parameters = new DynamicParameters();
             parameters.Add("p_UserId", userid, DbType.Int32);
             parameters.Add("p_IPAddress", userIP.ToString(), DbType.String);
-
-            try
-            {
-                connection.Open();
-                var result = await connection.QueryFirstOrDefaultAsync<int>(
-                    storedProcedure,
-                    parameters,
-                    commandType: CommandType.StoredProcedure
-                );
-                return result > 0;
-            }
-            catch (MySqlConnector.MySqlException ex) when (ex.Message != null && ex.Message.Contains("does not exist", StringComparison.OrdinalIgnoreCase))
-            {
-                // Stored procedure missing — fail safe: treat IP as unknown (will trigger OTP flow)
-                Console.WriteLine($"Warning: stored procedure '{storedProcedure}' not found. Exception: {ex.Message}");
-                return false;
-            }
-            catch (Exception ex)
-            {
-                // Log and treat as unknown IP to avoid crashing the request pipeline
-                Console.WriteLine($"Error checking IP: {ex.Message}");
-                return false;
-            }
-            finally
-            {
-                connection.Dispose();
-            }
+            connection.Open();
+            var result = await connection.QueryFirstOrDefaultAsync<int>(
+                storedProcedure,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            );
+            return result > 0;
         }
 
 
@@ -254,7 +225,7 @@ namespace StudentMs.Repository
             var parameters = new DynamicParameters();
             parameters.Add("p_UserId", userid, DbType.Int32);
             parameters.Add("p_IPAddress", userIP.ToString(), DbType.String);
-            parameters.Add("p_Status", "Login Successful", DbType.String);
+            parameters.Add("p_Status", status, DbType.String);
             var result = await con.ExecuteAsync(sp, parameters, commandType: CommandType.StoredProcedure);
 
             return result;
@@ -310,28 +281,12 @@ namespace StudentMs.Repository
 
         public async Task<int> GetUserId(string studentMail)
         {
-            await using var con = new MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
-            await con.OpenAsync();
-
-            studentMail = studentMail.Trim();
-
+            using var con = new MySqlConnector.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            var sp = "GetStudentIdByEmail";
             var parameters = new DynamicParameters();
             parameters.Add("p_StudentMail", studentMail, DbType.String);
-
-            const string spName = "GetStudentIdByEmail";
-
-            // Nullable int because the query might return nothing
-            var userId = await con.QueryFirstOrDefaultAsync<int?>(
-                spName,
-                parameters,
-                commandType: CommandType.StoredProcedure
-            );
-
-            if (!userId.HasValue)
-                throw new InvalidOperationException($"No user found with email '{studentMail}'.");
-
-            return userId.Value;
-
+            var userId = await con.QueryFirstOrDefaultAsync<int>(sp, parameters, commandType: CommandType.StoredProcedure);
+            return userId;
         }
         public LoginResponse GenerateJwtToken(User user)
         {
