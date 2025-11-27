@@ -33,7 +33,7 @@ namespace StudentMs.Repository
             {
                 throw new ArgumentNullException("Connection string 'DefaultConnection' not found.");
             }
-            _dbConnection = new MySqlConnector.MySqlConnection(connectionString);
+            using var _ = _dbConnection = new MySqlConnector.MySqlConnection(connectionString);
         }
 
         public async Task<LoginResult> LoginStudentAsync(string studentMail, string password)
