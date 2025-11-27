@@ -1,6 +1,38 @@
 [
   {
     "ContainingType": "StudentMs.Controllers.AAuthController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/AAuth/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "StudentMs.Model.ChangePasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentMs.Controllers.AAuthController",
+    "Method": "CheckOTP",
+    "RelativePath": "api/AAuth/check-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "StudentMs.Model.CheckOTP",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentMs.Controllers.AAuthController",
     "Method": "Login",
     "RelativePath": "api/AAuth/login",
     "HttpMethod": "POST",
