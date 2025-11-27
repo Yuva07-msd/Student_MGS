@@ -376,6 +376,70 @@ namespace StudentMs.Repository
             var result = await con.ExecuteAsync(sp, parameters, commandType: CommandType.StoredProcedure);
             return result;
         }
+        public async Task<string> ForgotPWD(string studentMail)
+        {
+           var userid = await GetUserId(studentMail);
+            if (userid == 0)
+            {
+                throw new InvalidOperationException("Invalid email address provided.");
+            }
+            var tempPWD = Guid.NewGuid().ToString().Substring(0, 8);
+            var hashedNewPassword = BCrypt.Net.BCrypt.HashPassword(tempPWD);
+            var connectionString = _configuration.GetConnectionString("DefaultConnection");
+            using var con = new MySqlConnector.MySqlConnection(connectionString);
+            var sp = "ResetStudentPassword";
+            var parameters = new DynamicParameters();
+            parameters.Add("p_StudentId", userid, DbType.Int32);
+            parameters.Add("p_NewPwd", hashedNewPassword, DbType.String);
+            var result = await con.ExecuteAsync(sp, parameters, commandType: CommandType.StoredProcedure);
+            if (result > 0)
+            {
+                var msg = $"Hello Student,\n\nYour temporary password is: {tempPWD}\n\nPlease login and change it.";
+
+         
+                await SendEmailAsync(studentMail, "Your Temporary Password", msg);
+
+                return "Temporary password sent to your email.";
+            }
+            else
+            {
+                throw new InvalidOperationException("Failed to reset password.");
+            }
+        }
+
+        public async Task<bool> SendEmailAsync(string toEmail, string subject, string body)
+        {
+            try
+            {
+                var smtpHost = _configuration["EmailSettings:SmtpHost"];
+                var smtpPort = int.Parse(_configuration["EmailSettings:SmtpPort"] ?? "587");
+                var smtpUser = _configuration["EmailSettings:SmtpUser"];
+                var smtpPass = _configuration["EmailSettings:SmtpPass"];
+                var fromEmail = _configuration["EmailSettings:FromEmail"];
+                using var client = new SmtpClient(smtpHost, smtpPort)
+                {
+                    Credentials = new NetworkCredential(smtpUser, smtpPass),
+                    EnableSsl = true
+                };
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress(address: fromEmail),
+                    Subject = subject,
+                    Body = body,
+                    IsBodyHtml = true
+                };
+                mailMessage.To.Add(toEmail);
+                await client.SendMailAsync(mailMessage);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to send email to {toEmail}: {ex.Message}");
+                return false;
+            }
+        }
+
+
 
     }
 }

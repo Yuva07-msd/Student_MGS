@@ -14,7 +14,7 @@ namespace StudentMs.Repository.IRepository
         Task<int> GetUserId(string studentMail);
         Task<int> CheckOTP(int studentId, int otp);
         Task<int>ChangePWD(int studentId,string OldPwd, string newPwd);
-
-
+        Task<string> ForgotPWD(string studentMail);
+        Task<bool> SendEmailAsync(string toEmail, string subject, string body);
     }
 }
