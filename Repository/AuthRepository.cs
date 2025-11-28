@@ -93,28 +93,28 @@ namespace StudentMs.Repository
             var UserName = await GetUserName(userId);
             if (string.IsNullOrWhiteSpace(studentMobile))
                 throw new ArgumentNullException(nameof(studentMobile), $"Mobile number is required to send OTP for {UserName}.");
-
+            if (!studentMobile.StartsWith("91"))
+            {
+                studentMobile = "91" + studentMobile;
+            }
             // Use a private method to manage OTP storage internally
             string otp = SaveOTP(userId);
 
             // Fast2SMS configuration
             var apiKey = _configuration["SMSSettings:Fast2SMSApiKey"];
             var senderId = _configuration["SMSSettings:SenderId"] ?? "TXTIND";
-            var route = _configuration["SMSSettings:Route"] ?? "v3";
+            var route = _configuration["SMSSettings:Route"] ?? "q";
+
 
             if (string.IsNullOrWhiteSpace(apiKey))
                 throw new InvalidOperationException("Fast2SMS API key is missing.");
 
             // Compose message
-            var message = $@"
-<div style='font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9;'>
-    <h2 style='color:#333;'>🔒 Your OTP Code</h2>
-    <p>👋 Dear <strong>{UserName}</strong>,</p>
-    <p>🔢 Your OTP is:</p>
-    <p style='font-size: 20px; font-weight: bold; color: #fff; background-color: #007bff; padding: 10px 15px; display: inline-block; border-radius: 5px;'>{otp}</p>
-    <p>⏰ It is valid for 24 hours. Do not share it with anyone. ❗</p>
-    <p style='font-size: 12px; color: #999;'>📩 This is an automated message. Please do not reply.</p>
-</div>";
+            var message = $"Dear {UserName},\n" +
+    $"Your OTP is: {otp}\n" +
+    "It is valid for 24 hours.\n" +
+    "Do not share this code with anyone.\n" +
+    "This is an automated message. Please do not reply.";
 
             // Send SMS
             using var request = new HttpRequestMessage(HttpMethod.Post, "https://www.fast2sms.com/dev/bulkV2")
@@ -383,6 +383,7 @@ namespace StudentMs.Repository
             {
                 throw new InvalidOperationException("Invalid email address provided.");
             }
+            var username = await GetUserName(studentMail);
             var tempPWD = Guid.NewGuid().ToString().Substring(0, 8);
             var hashedNewPassword = BCrypt.Net.BCrypt.HashPassword(tempPWD);
             var connectionString = _configuration.GetConnectionString("DefaultConnection");
@@ -394,7 +395,26 @@ namespace StudentMs.Repository
             var result = await con.ExecuteAsync(sp, parameters, commandType: CommandType.StoredProcedure);
             if (result > 0)
             {
-                var msg = $"Hello Student,\n\nYour temporary password is: {tempPWD}\n\nPlease login and change it.";
+                var msg = string message = $@"<html><head><meta charset='UTF-8'></head>
+<body style='margin:0;padding:0;font-family:Arial,sans-serif;background:#f4f4f4;'>
+<table width='100%' cellpadding='0' cellspacing='0'><tr><td align='center'>
+<table width='600' cellpadding='0' cellspacing='0' style='background:#fff;margin:20px 0;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.1);padding:30px;'>
+<tr><td style='text-align:center;'><h1 style='color:#007bff;margin-bottom:10px;'>Hello {username},</h1>
+<p style='font-size:16px;color:#555;line-height:1.5;'>Your temporary password has been successfully generated. <strong>It is valid for 24 hours only.</strong> Please follow the steps below to login and set a new password.</p></td></tr>
+<tr><td style='padding:20px;text-align:center;'><div style='display:inline-block;padding:15px 25px;background:#e0f7fa;border-radius:8px;font-size:20px;font-weight:bold;color:#007bff;'>Temporary Password: {tempPWD}</div></td></tr>
+<tr><td style='padding:15px 0;'><ol style='font-size:16px;color:#555;line-height:1.6;'>
+<li>Use the temporary password above as your <strong>Old Password</strong> to login.</li>
+<li>After login, go to <strong>'Change Password'</strong> and set your new password.</li>
+<li>Make sure your new password is strong and not shared with anyone.</li>
+<li>Remember, this Do Not Forgot to Change New Paswword,Otherwise Your <strong>Password is</strong> {tempPWD} </li>
+</ol></td></tr>
+<tr><td style='padding:15px 0;text-align:center;'><div style='display:inline-block;padding:15px 25px;background:#f0f0f0;border-radius:8px;font-size:16px;color:#333;'>
+<p><strong>Old Password:</strong> {tempPWD}</p>
+<p><strong>New Password:</strong> [Set your new password]</p>
+</div></td></tr>
+<tr><td style='padding-top:20px;text-align:center;font-size:12px;color:#999;'><p>This is an automated message. Please do not reply.</p></td></tr>
+</table></td></tr></table></body></html>";
+
 
 
                 await SendEmailAsync(studentMail, "Your Temporary Password", msg);
