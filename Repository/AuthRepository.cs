@@ -33,7 +33,7 @@ namespace StudentMs.Repository
             {
                 throw new ArgumentNullException("Connection string 'DefaultConnection' not found.");
             }
-            using var _ = _dbConnection = new MySqlConnector.MySqlConnection(connectionString);
+            using var _dbConnection = new MySqlConnector.MySqlConnection(connectionString);
         }
 
         public async Task<LoginResult> LoginStudentAsync(string studentMail, string password)
@@ -105,29 +105,32 @@ namespace StudentMs.Repository
             var senderId = _configuration["SMSSettings:SenderId"] ?? "TXTIND";
             var route = _configuration["SMSSettings:Route"] ?? "q";
 
-
             if (string.IsNullOrWhiteSpace(apiKey))
                 throw new InvalidOperationException("Fast2SMS API key is missing.");
 
             // Compose message
             var message = $"Dear {UserName},\n" +
-    $"Your OTP is: {otp}\n" +
-    "It is valid for 24 hours.\n" +
-    "Do not share this code with anyone.\n" +
-    "This is an automated message. Please do not reply.";
+                          $"Your OTP is: {otp}\n" +
+                          "It is valid for 24 hours.\n" +
+                          "Do not share this code with anyone.\n" +
+                          "This is an automated message. Please do not reply.";
 
-            // Send SMS
+            // Prepare JSON payload
+            var payload = new
+            {
+                sender_id = senderId,
+                message = message,
+                route = route,
+                numbers = studentMobile
+            };
+
             using var request = new HttpRequestMessage(HttpMethod.Post, "https://www.fast2sms.com/dev/bulkV2")
             {
-                Content = new FormUrlEncodedContent(new[]
-                {
-                    new KeyValuePair<string, string>("authorization", apiKey),
-                    new KeyValuePair<string, string>("sender_id", senderId),
-                    new KeyValuePair<string, string>("message", message),
-                    new KeyValuePair<string, string>("route", route),
-                    new KeyValuePair<string, string>("numbers", studentMobile)
-                })
+                Content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json")
             };
+
+            // Add API key in header
+            request.Headers.Add("authorization", apiKey);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             try
@@ -383,7 +386,7 @@ namespace StudentMs.Repository
             {
                 throw new InvalidOperationException("Invalid email address provided.");
             }
-            var username = await GetUserName(studentMail);
+            var username = await GetUserName(userid);
             var tempPWD = Guid.NewGuid().ToString().Substring(0, 8);
             var hashedNewPassword = BCrypt.Net.BCrypt.HashPassword(tempPWD);
             var connectionString = _configuration.GetConnectionString("DefaultConnection");
@@ -395,7 +398,7 @@ namespace StudentMs.Repository
             var result = await con.ExecuteAsync(sp, parameters, commandType: CommandType.StoredProcedure);
             if (result > 0)
             {
-                var msg = string message = $@"<html><head><meta charset='UTF-8'></head>
+                var msg = $@"<html><head><meta charset='UTF-8'></head>
 <body style='margin:0;padding:0;font-family:Arial,sans-serif;background:#f4f4f4;'>
 <table width='100%' cellpadding='0' cellspacing='0'><tr><td align='center'>
 <table width='600' cellpadding='0' cellspacing='0' style='background:#fff;margin:20px 0;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.1);padding:30px;'>
